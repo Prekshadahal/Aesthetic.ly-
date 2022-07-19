@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Prolog of the XML -->
+
+<!--Linking the style sheet with XML-->
+<?xml-stylesheet type="text/css" href="catalog_20048964.css"?>
+
+<!--Linking the XML schema with XML-->
+<?xml-model href="catalog_20048964.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<!--Declaring the root element-->
+<giftCards>
+    <!---Declaring first direct child of the root element called store-->
+    <store>
+
+        <!--Declaring the navigation bar for the website-->
+        <nav>
+            <!--Creating a child element named logo to carry the data related to logo to the browser-->
+            <logo>
+                <image id="aesthecticLogo" />
+                <logoText>Aesthectic.ly~~</logoText>
+            </logo>
+
+            <!--Text for navigation bar-->
+            <option1>Home</option1>
+            <option2>About Us</option2>
+            <option3>Cards</option3>
+
+            <!-- Creating another child element of nav element to carry the details of searchbar.-->
+            <searchbar>
+                <image id="searchbar" />
+            </searchbar>
+        </nav>
+
+        <!--Declaring a seperate child element to display the name of the store-->
+        <details>
+            <name>Aesthectic.ly Cards </name>
+        </details>
+
+        <!--Declaring a seperate child element to display the name of the slogan-->
+        <Slogan>
+                We believe in doing it Aesthectical.ly!!
+        </Slogan>
+
+        <!--Last child element of the parent element store-->
+        <URL>[ https://aesthetic.lly.com/ ]</URL>
+    </store>
+
+    <!---Declaring second direct child of the root element named cards-->
+    <cards>
+
+        <!-- Creating a child element named bestSeller to represnt the first category of the cards.-->
+        <bestSeller>
+
+            <!--Element to declare the heading of the bestSeller-->
+            <heading>Some of our Best-sellers cards are;</heading>
+
+            <!--Element to declare the heading of the bestSeller-->
+            <items>
+                <card cardId="card01">                    <!--card01 is for card details-->
+                    <img id="card1" />
+                    <!--card1 is for image-->
+                    <!--Declaring other elements like cardName, type, cost, Validity, availableNumber and no_of_users
+                        of the cards -->
+                    <cardName>Dell</cardName>
+                    <type>Physical</type>
+                    <cost>400</cost>
+                    <validity>2025</validity>
+                    <availableNumber>12</availableNumber>
+                    <no_of_users>15</no_of_users>
+                    <!--In the discount element, Available acts as the attribute-->
+                    <discount Available="false"></discount>
+                    <!--In the refund element, choice acts as the attribute-->
+                    <refund choice="No">
+                        <Refund>No</Refund>
+                    </refund>
+                    <!--In the company element, name acts as the attribute-->
+                    <company name="Dell">
+                        <Company>DELL</Company>
+                    </company>
+                </card>
+
+
+                <card cardId="card02">
+                    <img id="card2" />
+                    <cardName>Preety Click</cardName>
+                    <type>Physical</type>
+                    <cost>2000</cost>
+                    <validity>2026</validity>
+                    <availableNumber>2</availableNumber>
+                    <no_of_users>115</no_of_users>
+                    <!--In the renew element, option acts as the attribute-->
+                    <renew option="Yes">
+                        <Renew>Will be available soon</Renew>
+                    </renew>
+                    <!--The default value of the attribute Available is true.-->
+                    <discount>
+                        <discount_vouchers>10%</discount_vouchers>
+                    </discount>
+                    <refund choice="Yes">
+                        <Refund>Yes</Refund>
+                    </refund>
+                </card>
+
+                <card cardId="card_03">
+                    <img id="card3" />
+                    <cardName>The Assets</cardName>
+                    <type>Both</type>
+                    <cost>4000</cost>
+                    <validity>2025</validity>
+                    <no_of_users>12</no_of_users>
+                    <renew option="No">
+                        <Renew>No</Renew>
+                    </renew>
+                    <discount>
+                        <discount_vouchers>12%</discount_vouchers>
+                    </discount>
+                    <vat>12%</vat>
+                    <refund choice="No">
+                        <Refund>No</Refund>
+                    </refund>
+                    <company name="The Assets">
+                        <Company>The Assets</Company>
+                    </company>
+                </card>
+            </items>
+        </bestSeller>
+
+        <!-- Creating a child element named otherCards to represnt the second category of the cards.-->
+
+        <otherCards>
+            <!--Element to declare the heading of the otherCards-->
+            <heading>Other Samples</heading>
+            <items>
+                <card cardId="card04">
+                    <img id="card4" />
+                    <cardName>Google Play </cardName>
+                    <type>Digital</type>
+                    <cost>25</cost>
+                    <validity>2023</validity>
+                    <availableNumber>25</availableNumber>
+                    <no_of_users>17</no_of_users>
+                    <renew option="No">
+                        <Renew>No</Renew>
+                    </renew>
+                    <discount>
+                        <discount_vouchers>13%</discount_vouchers>
+                    </discount>
+                </card>
+
+
+                <card cardId="card05">
+                    <img id="card5" />
+                    <cardName>ebay</cardName>
+                    <type>Physical</type>                    <!--The cards can be available in either physical, digital or both of the forms.-->
+                    <cost>27</cost>
+                    <validity>2024</validity>
+                    <availableNumber>2</availableNumber>
+                    <no_of_users>18</no_of_users>
+                    <discount Available="false"></discount>
+                    <refund choice="Yes">
+                        <Refund>Yes</Refund>
+                    </refund>
+                    <company name="EBAY">
+                        <Company>EBAY</Company>
+                    </company>
+                </card>
+
+                <card cardId="card06">
+                    <img id="card6"/>
+                    <cardName>iTunes</cardName>
+                    <type>Digital</type>
+                    <cost>25</cost>
+                    <validity>2027</validity>
+                    <availableNumber>20</availableNumber>
+                    <no_of_users>8</no_of_users>
+                    <renew option="Yes">
+                        <Renew>Yes</Renew>
+                    </renew>
+                    <discount>
+                        <discount_vouchers>13%</discount_vouchers>
+                    </discount>
+                    <vat>12%</vat>
+                </card>
+            </items>
+
+            <items>
+                <card cardId="card07">
+                    <img id="card7" />
+                    <cardName>ebay Updated</cardName>
+                    <type>Both</type>
+                    <cost>123</cost>
+                    <validity>2042</validity>
+                    <no_of_users>45</no_of_users>
+                    <renew option="Yes">
+                        <Renew>Yes</Renew>
+                    </renew>
+                    <discount>
+                        <discount_vouchers>18%</discount_vouchers>
+                    </discount>
+                    <refund choice="Yes">
+                        <Refund>Yes</Refund>
+                    </refund>
+                </card>
+
+                <card cardId="card08">
+                    <img id="card8" />
+                    <cardName>Roblox</cardName>
+                    <type>Digital</type>
+                    <cost>10</cost>
+                    <validity>2023</validity>
+                    <availableNumber>70</availableNumber>
+                    <no_of_users>78</no_of_users>
+                    <renew option="Will be available soon">
+                        <Renew>Will be available soon</Renew>
+                    </renew>
+                    <discount Available="false"></discount>
+                </card>
+
+                <card cardId="card09">
+                    <img id="card9" />
+                    <cardName>Amazon Gifts</cardName>
+                    <type>Digital</type>
+                    <cost>150</cost>
+                    <validity>2040</validity>
+                    <no_of_users>52</no_of_users>
+                    <discount>
+                        <discount_vouchers>10%</discount_vouchers>
+                    </discount>
+                    <company name="Amazon">
+                        <Company>Amazon</Company>
+                    </company>
+                </card>
+            </items>
+
+            <items>
+                <card cardId="card010">
+                    <img id="card10" />
+                    <cardName>Windows</cardName>
+                    <type>Physical</type>
+                    <cost>50</cost>
+                    <validity>2026</validity>
+                    <no_of_users>45</no_of_users>
+                    <renew option="No">
+                        <Renew>No</Renew>
+                    </renew>
+                    <discount Available="false"></discount>
+                    <vat>12%</vat>
+                </card>
+
+                <card cardId="card011">
+                    <img id="card11" />
+                    <cardName>Chegg</cardName>
+                    <type>Both</type>
+                    <cost>40</cost>
+                    <validity>2025</validity>
+                    <availableNumber>250</availableNumber>
+                    <no_of_users>15</no_of_users>
+                    <renew option="Yes">
+                        <Renew>Yes</Renew>
+                    </renew>
+                    <discount>
+                        <discount_vouchers>15%</discount_vouchers>
+                    </discount>
+                    <vat>12%</vat>
+                </card>
+
+                <card cardId="card012">
+                    <img id="card12" />
+                    <cardName>Xbox</cardName>
+                    <type>Physical</type>
+                    <cost>75</cost>
+                    <validity>2028</validity>
+                    <no_of_users>30</no_of_users>
+                    <discount>
+                        <discount_vouchers>5%</discount_vouchers>
+                    </discount>
+                    <refund choice="No">
+                        <Refund>No</Refund>
+                    </refund>
+                    <company name="XBOX">
+                        <Company>XBOX</Company>
+                    </company>
+                </card>
+            </items>
+
+            <items>
+                <card cardId="card013">
+                    <img id="card13" />
+                    <cardName>Netfix Combined😍 </cardName>
+                    <type>Both</type>
+                    <cost>200</cost>
+                    <validity>2040</validity>
+                    <availableNumber>80</availableNumber>
+                    <no_of_users>180</no_of_users>
+                    <renew option="Will be available soon">
+                        <Renew>Will be available soon</Renew>
+                    </renew>
+                    <discount Available="false"></discount>
+                    <refund choice="Yes">
+                        <Refund>Yes</Refund>
+                    </refund>
+                </card>
+
+                <card cardId="card014">
+                    <img id="card14" />
+                    <cardName>iTunes Super Mega</cardName>
+                    <type>Both</type>
+                    <cost>210</cost>
+                    <validity>2045</validity>
+                    <no_of_users>120</no_of_users>
+                    <discount Available="false"></discount>
+                    <refund choice="No">
+                        <Refund>No</Refund>
+                    </refund>
+                    <company name="Apple">
+                        <Company>Apple</Company>
+                    </company>
+                </card>
+
+                <card cardId="card015">
+                    <img id="card15" />
+                    <cardName>iTunes Mega</cardName>
+                    <type>Digital</type>
+                    <cost>170</cost>
+                    <validity>2041</validity>
+                    <no_of_users>25</no_of_users>
+                    <renew option="No">
+                        <Renew>No</Renew>
+                    </renew>
+                    <discount>
+                        <discount_vouchers>3%</discount_vouchers>
+                    </discount>
+                    <vat>12%</vat>
+                </card>
+            </items>
+        </otherCards>
+    </cards>
+
+    <!---Declaring third or the final direct child of the root element named footer-->
+    <footer>
+        <storeName>Aesthetic.lly</storeName>
+        <!--Declaring the address of the store.-->
+        <address>
+            <text>Kathmandu | Pokhara | Biratnagar | Jhapa | Birgunj</text>
+        </address>
+        <!--Declaring the telephone number of the store.-->
+        <telephone>
+            <text>9800000001 | 981200002 | 912500000 | 984532125 | 9865432234</text>
+        </telephone>
+        <msg1>Please note that the contact numbers are placed sequentially with our location.</msg1>
+        <!--Declaring the social medias of the store.-->
+        <follow>
+            <text>Instagram | Facebook | Messenger | Viber | Tiktok</text>
+        </follow>
+        <msg>
+            Offering several gift cards since 2001. 
+        </msg>
+        <!--Message related to CData-->
+        <msg>
+            Copyright © 2022 Aesthetic.lly Pvt. Ltd. All rights reserved.
+        </msg>
+    </footer>
+</giftCards>

@@ -1,0 +1,271 @@
+<!--To validate the schema -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!--Declaring the root elements in XSD-->
+    <xs:element name="giftCards">
+        <!--Since the root element contains other child elements-->
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="store"></xs:element>
+                <xs:element ref="cards"></xs:element>
+                <xs:element ref="footer"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="store">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="nav"></xs:element>
+                <xs:element ref="details"></xs:element>
+                <xs:element ref="Slogan"></xs:element>
+                <xs:element ref="URL"></xs:element>
+
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="nav">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="logo"></xs:element>
+                <xs:element ref="option1"></xs:element>
+                <xs:element ref="option2"></xs:element>
+                <xs:element ref="option3"></xs:element>
+                <xs:element ref="searchbar"></xs:element>
+
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="logo">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="image"></xs:element>
+                <xs:element ref="logoText"></xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="image">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="id" use="required"></xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attribute name="id" type="xs:string"></xs:attribute>
+    <xs:element name="logoText" type="xs:string"></xs:element>
+
+    <xs:element name="option1" type="xs:string"></xs:element>
+    <xs:element name="option2" type="xs:string"></xs:element>
+    <xs:element name="option3" type="xs:string"></xs:element>
+    <xs:element name="searchbar">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="image"></xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="details">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="name"></xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="name" type="xs:string"></xs:element>
+    <xs:element name="Slogan" type="xs:string"></xs:element>
+    <xs:element name="URL" type="xs:string"></xs:element>
+
+
+    <xs:element name="cards">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="bestSeller"></xs:element>
+                <xs:element ref="otherCards"></xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="bestSeller">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="heading"></xs:element>
+                <xs:element ref="items"></xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="heading" type="xs:string"></xs:element>
+    <xs:element name="items">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="card" maxOccurs="3"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="card">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="img"></xs:element>
+                <xs:element ref="cardName"></xs:element>
+                <xs:element ref="type"></xs:element>
+                <xs:element ref="cost"></xs:element>
+                <xs:element ref="validity"></xs:element>
+                <xs:element ref="availableNumber" minOccurs="0"></xs:element>
+                <xs:element ref="no_of_users"></xs:element>
+                <xs:element ref="renew" minOccurs="0"></xs:element>
+                <xs:element ref="discount" minOccurs="0"></xs:element>
+                <xs:element ref="vat" minOccurs="0"></xs:element>
+                <xs:element ref="refund" minOccurs="0"></xs:element>
+                <xs:element ref="company" minOccurs="0"></xs:element>
+            </xs:sequence>
+            <xs:attribute ref="cardId" use="required"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="img">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="id" use="required"></xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="cardName" type="xs:string"></xs:element>
+    <xs:element name="type" type="xs:string"></xs:element>
+    <xs:element name="cost">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:positiveInteger">
+                    <xs:attribute ref="currency" fixed="$" use="optional"></xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="currency" type="xs:string"></xs:attribute>
+
+    <xs:element name="validity" type="xs:gYear"></xs:element>
+    <xs:element name="availableNumber" type="xs:positiveInteger"></xs:element>
+    <xs:element name="no_of_users" type="xs:positiveInteger"></xs:element>
+    <xs:element name="discount">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="discount_vouchers" minOccurs="0"></xs:element>
+            </xs:sequence>
+            <xs:attribute ref="Available" default="true"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="discount_vouchers" type="xs:string"></xs:element>
+    <xs:attribute name="Available" type="xs:boolean"></xs:attribute>
+    <xs:element name="vat" type="xs:string"></xs:element>
+
+
+    <xs:element name="renew">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="Renew"></xs:element>
+            </xs:all>
+            <xs:attribute ref="option" use="required"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Renew" type="xs:string"></xs:element>
+    <xs:attribute name="option">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Yes"></xs:enumeration>
+                <xs:enumeration value="No"></xs:enumeration>
+                <xs:enumeration value="Will be available soon"></xs:enumeration>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <xs:element name="refund">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="Refund"></xs:element>
+            </xs:all>
+            <xs:attribute ref="choice" use="required"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Refund" type="xs:string"></xs:element>
+    <xs:attribute name="choice">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Yes"></xs:enumeration>
+                <xs:enumeration value="No"></xs:enumeration>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <xs:element name="company">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="Company"></xs:element>
+            </xs:all>
+            <xs:attribute ref="name" use="required"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="otherCards">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="heading"></xs:element>
+                <xs:element ref="items" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Company" type="xs:string"></xs:element>
+    <xs:attribute name="name" type="xs:string"></xs:attribute>
+    <xs:attribute name="cardId" type="xs:ID"></xs:attribute>
+
+    <xs:element name="footer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="storeName"></xs:element>
+                <xs:element ref="address"></xs:element>
+                <xs:element ref="telephone"></xs:element>
+                <xs:element ref="msg1"></xs:element>
+                <xs:element ref="follow"></xs:element>
+                <xs:element ref="msg" maxOccurs="2"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="storeName" type="xs:string"></xs:element>
+    <xs:element name="address">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="text"></xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="text" type="xs:string"></xs:element>
+
+    <xs:element name="telephone">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="text"></xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="msg1" type="xs:string"></xs:element>
+    <xs:element name="follow">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="text"></xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="msg" type="xs:string"></xs:element>
+
+</xs:schema>
